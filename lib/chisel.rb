@@ -7,9 +7,21 @@ class Chisel
     @output = output
   end
 
-  def header_parser
-    
+  #def header_parser worry about later...
+
+  #end
+
+  def italicize(word)
+
+
   end
+
+  def make_bold(word)
+
+
+
+  end
+
 
 
 end
