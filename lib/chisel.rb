@@ -7,5 +7,9 @@ class Chisel
     @output = output
   end
 
+  def header_parser
+    
+  end
+
 
 end
