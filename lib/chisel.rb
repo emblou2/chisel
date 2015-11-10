@@ -1,4 +1,6 @@
-class Chisel
+require 'redcarpet'
+
+class Chisel < Redcarpet::Render::HTML
 
   attr_reader :input, :output
 
