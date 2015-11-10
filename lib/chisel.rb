@@ -1,6 +1,10 @@
 require 'redcarpet'
 
 class Chisel < Redcarpet::Render::HTML
+  #Things I found for redcarpet...don't know how to use yet.
+  #markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+  #renderer = Redcarpet::Render::HTML.new(render_options)
+  #markdown = Redcarpet::Markdown.new(renderer, extensions)
 
   attr_reader :input, :output
 
