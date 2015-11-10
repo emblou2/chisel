@@ -6,6 +6,7 @@ class Chisel < Redcarpet::Render::HTML
   #renderer = Redcarpet::Render::HTML.new(render_options)
   #markdown = Redcarpet::Markdown.new(renderer, extensions)
 
+
   attr_reader :input, :output
 
   def initialize(input)
@@ -16,6 +17,10 @@ class Chisel < Redcarpet::Render::HTML
   #def header_parser worry about later...
 
   #end
+
+  def markdown
+    Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
+  end
 
   def italicize(word)
 
