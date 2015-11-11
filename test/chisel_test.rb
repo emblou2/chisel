@@ -6,46 +6,49 @@ require_relative '../lib/chisel'
 
 class ChiselTest < Minitest::Test
 
-  def test_chisel_exists
-    #what Justin and I talked about
-    input = "poo"
-    c = Chisel.new(input)
-    assert c
-  end
-
-  def test_if_input_exists
-    input = "Some stuff"
-    c = Chisel.new(input)
-    assert_equal "Some stuff", c.input
-  end
-
   def test_it_can_do_italics
     input = "_Do italics_"
-    c = Chisel.new(input)
-    assert_equal "<i>Do italics</i>", c.input
+    # c = Chisel.new(input)
+    # assert_equal "<i>Do italics</i>", c.input
+
+    c = Chisel.new
+    result = c.italics(input)
+    assert_equal "<i>Do italics</i>", result
   end
 
+  def test_it_can_do_other_italics
+    input = "_something something_"
+    c = Chisel.new
+    result = c.italics(input)
+    assert_equal "<i>something something</i>", result
+  end
 
   def test_it_can_do_emphasized #is this where the redcarpet thing comes in?
-    skip
     input = "*Words are emphasized*"
-    c = Chisel.new(input)
-    assert_equal "<em>Words are emphasized</em>", c.input
+    c = Chisel.new
+    result = c.emphasized(input)
+    assert_equal "<em>Words are emphasized</em>", result
   end
 
   def test_it_can_do_strong
-    skip
     input = "**Words are strong**"
-    c = Chisel.new(input)
-    assert_equal "<strong>Words are strong</strong>"
+    c = Chisel.new
+    result = c.strong(input)
+    assert_equal "<strong>Words are strong</strong>", result
   end
 
 
   def test_what_if_h1
-    skip
-  #What Mike and I talked about...not ready for parser yet
-    c = Chisel.new(input)
-    result = Chisel.header_parser("#This is H 1")
-    assert_equal "<h1>This is H 1</h1>", result
+    input = "#This is H1"
+    c = Chisel.new
+    result = c.header_parser(input)
+    assert_equal "<h1>This is H1</h1>", result
+  end
+
+  def test_h2
+    input = "##pizza"
+    c = Chisel.new
+    result = c.header_parser(input)
+    assert_equal "<h2>pizza</h2>", result
   end
 end
