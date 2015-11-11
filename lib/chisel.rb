@@ -14,21 +14,32 @@ class Chisel < Redcarpet::Render::HTML
     @output = output
   end
 
-  #def header_parser worry about later...
 
-  #end
 
-  def markdown
-    Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
+    #def markdown
+      #Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
+    #end
+
+
+
+  def emphasized(word)
+      #each of these are "wrapped in tags", that means there are tag pairs
+      #if there is only one tag, it's incomplete...kinda like that hands on stack lesson
+      #might need a counter to keep track of odd or even amount of tags
+      #if/else maybe...like counter.even...zero is even, so that would initiate first tag
+      #odd would be closing tag. Same true for "*" thingy, as they are wrap the text too.
+
+
   end
 
-  def italicize(word)
-
-
+  def stronged(word)
+      #should be like emphasized but with different tags for html, and **stuff**
   end
 
-  def make_bold(word)
-
+  def header
+      #maybe elsif because of how many headers (6) possible. these
+      #are not paired in markdown, but do have tags. Can all html
+      #be put into <> and </>, but with the type of thing it is on the inside
 
 
   end

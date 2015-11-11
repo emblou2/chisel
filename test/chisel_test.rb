@@ -25,18 +25,19 @@ class ChiselTest < Minitest::Test
     assert_equal "<i>Do italics</i>", c.input
   end
 
-  def test_it_can_do_bold
+
+  def test_it_can_do_emphasized #is this where the redcarpet thing comes in?
     skip
-    input = "*Words are bold*"
+    input = "*Words are emphasized*"
     c = Chisel.new(input)
-    assert_equal "<em>Words are bold</em>", c.input
+    assert_equal "<em>Words are emphasized</em>", c.input
   end
 
-  def test_it_can_do_strong_bold
+  def test_it_can_do_strong
     skip
-    input = "**Words are strong bold**"
+    input = "**Words are strong**"
     c = Chisel.new(input)
-    assert_equal "<strong>Words are strong bold</strong>"
+    assert_equal "<strong>Words are strong</strong>"
   end
 
 
@@ -44,7 +45,7 @@ class ChiselTest < Minitest::Test
     skip
   #What Mike and I talked about...not ready for parser yet
     c = Chisel.new(input)
-    result = Chisel.header_parser("# This is H 1")
-    assert_equal "<h1> This is H 1 </h1>", result
+    result = Chisel.header_parser("#This is H 1")
+    assert_equal "<h1>This is H 1</h1>", result
   end
 end
