@@ -1,5 +1,7 @@
 class Chisel
 
+#gsub!, map, join important! Look for a way to count "#"s, makes
+#way more sense. Keep moving forward. Go to sleep now.
 
   def italics(input)
     something = input[1..-2]
