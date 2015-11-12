@@ -8,9 +8,6 @@ class ChiselTest < Minitest::Test
 
   def test_it_can_do_italics
     input = "_Do italics_"
-    # c = Chisel.new(input)
-    # assert_equal "<i>Do italics</i>", c.input
-
     c = Chisel.new
     result = c.italics(input)
     assert_equal "<i>Do italics</i>", result
@@ -23,7 +20,7 @@ class ChiselTest < Minitest::Test
     assert_equal "<i>something something</i>", result
   end
 
-  def test_it_can_do_emphasized #is this where the redcarpet thing comes in?
+  def test_it_can_do_emphasized
     input = "*Words are emphasized*"
     c = Chisel.new
     result = c.emphasized(input)
