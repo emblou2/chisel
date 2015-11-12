@@ -51,4 +51,11 @@ class ChiselTest < Minitest::Test
     result = c.header_parser(input)
     assert_equal "<h2>pizza</h2>", result
   end
+
+  def test_can_work_for_any_header
+    input = "###Catdad"
+    c = Chisel.new
+    result = c.header_parser(input)
+    assert_equal "<h3>Catdad</h3>", result
+  end
 end

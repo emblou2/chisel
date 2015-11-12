@@ -1,7 +1,5 @@
 class Chisel
 
-#gsub!, map, join important! Look for a way to count "#"s, makes
-#way more sense. Keep moving forward. Go to sleep now.
 
   def italics(input)
     something = input[1..-2]
@@ -23,18 +21,8 @@ class Chisel
   end
 
   def header_parser(input)
-    #something should be related = h
-#look at string docs
-    if "#" [1..6] #check if all are #..enums
-      h = 1 #reverse this to start with h5, then down
-    elsif "##"
-      h = 2
-    else "#####"
-      h = 5
-    end
-    something = input[1..-1]
-    "<h#{h}>#{something}</h#{h}>"
-
+    #hated that last mess. need gsub, maybe a counter, don't go too fast,
+    #start with h3
   end
 
 
