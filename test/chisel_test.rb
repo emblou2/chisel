@@ -54,4 +54,27 @@ class ChiselTest < Minitest::Test
     result = c.header_parser(input)
     assert_equal "<h3>Catdad</h3>", result
   end
+
+  def test_for_blockquote
+    input = ">Here is a blockquote"
+    c = Chisel.new
+    result = c.blockquote(input)
+    assert_equal "<blockquote><p>Here is a blockquote</p></blockquote>", result
+  end
+
+  def test_for_unordered_list
+    input = "\n\n*Sushi \n*Barbeque \n*Mexican"
+    c = Chisel.new
+    result = c.unordered_list(input)
+    assert_equal "<ul>\n<li>Sushi</li>\n<li>Barbeque</li>\n<li>Mexican</ul>", result
+  end
+
+  def test_for_ordered_list
+    input = "\n\n*Sushi \n*Barbeque \n*Mexican"
+    c = Chisel.new
+    result = c.ordered_list(input)
+    assert_equal "<ol>\n<li>Sushi</li>\n<li>Barbeque</li>\n<li>Mexican</ol>", result
+  end
+
+
 end
