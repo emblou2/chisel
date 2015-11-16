@@ -69,20 +69,20 @@ class ChiselTest < Minitest::Test
    assert_equal "" , result
  end
 
+
   def test_for_unordered_list_with_one_thing
-skip
-    input = "/n*Sushi"
+
+    input = "*Sushi"
     c = Chisel.new
     result = c.unordered_list(input)
     assert_equal "<ul><li>Sushi</li></ul>", result
   end
 
   def test_for_ordered_list_with_one_thing
-    skip
-    input = "/n*Sushi"
+    input = "*Sushi"
     c = Chisel.new
     result = c.ordered_list(input)
-    assert_equal "<ol><li>Sushi</li></ol>", result
+    assert_equal "<ol>\n<li>Sushi</li>\n</ol>", result
   end
 
 

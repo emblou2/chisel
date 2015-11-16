@@ -39,19 +39,26 @@ class Chisel
   end
 
 
-
   def unordered_list(input)
-    if input = ""
-      return ""
+    if input == ""
+    return ""
+    end
 
     something = input[1..-1]
-    "<ul>\n<li>#{something}</li>\n</ul>"
+
+      "<ul><li>#{something}</li></ul>"
   end
-end
+
+
                             ##make it a string maybe? Need to ask!
   def ordered_list(input)
+    if input == ""
+    return ""
+    end
+
     something = input[1..-1]
     "<ol>\n<li>#{something}</li>\n</ol>"
   end
+
 
 end
