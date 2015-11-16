@@ -38,10 +38,16 @@ class Chisel
     "<blockquote><p>#{something}</p></blockquote>"
   end
 
-  def unordered_list(input) ##need map or map with index...maybe?
+
+
+  def unordered_list(input)
+    if input = ""
+      return ""
+
     something = input[1..-1]
     "<ul>\n<li>#{something}</li>\n</ul>"
   end
+end
                             ##make it a string maybe? Need to ask!
   def ordered_list(input)
     something = input[1..-1]
