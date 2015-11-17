@@ -4,7 +4,8 @@ class Chisel
   #to refactor things I know work, move stuff into more specific
   #files, add chisel input/output files (?), get the list stuff
   #working. Going back to the markdown tutorial for a second.
-  #have to lose the * for second item...maybe lstrip
+  #have to lose the * for second item...maybe lstrip...nope
+  #strip is about whitespace. Grrrrr!
 
 
   def italics(input)
@@ -51,6 +52,7 @@ class Chisel
     end
 
     something = input[1..-1]
+    something.delete "*"
 
       "<ul><li>#{something}</li></ul>"
   end
