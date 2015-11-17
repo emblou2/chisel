@@ -85,5 +85,12 @@ class ChiselTest < Minitest::Test
     assert_equal "<ol>\n<li>Sushi</li>\n</ol>", result
   end
 
+  def test_for_unordered_list_with_two_things
+    input = "*Sushi*Mexican"
+    c = Chisel.new
+    result = c.unordered_list(input)
+    assert_equal "<ul><li>Sushi</li><li>Mexican</li></ul>", result
+  end
+
 
 end

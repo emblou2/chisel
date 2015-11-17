@@ -1,5 +1,11 @@
 class Chisel
 
+  #Want to trash it all and start over, but won't. Need
+  #to refactor things I know work, move stuff into more specific
+  #files, add chisel input/output files (?), get the list stuff
+  #working. Going back to the markdown tutorial for a second.
+  #have to lose the * for second item...maybe lstrip
+
 
   def italics(input)
     something = input[1..-2]
@@ -50,7 +56,7 @@ class Chisel
   end
 
 
-                            ##make it a string maybe? Need to ask!
+
   def ordered_list(input)
     if input == ""
     return ""
