@@ -2,6 +2,10 @@ require 'pry'
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative '../lib/chisel'
+require_relative '../lib/header'
+require_relative '../lib/list'
+require_relative '../lib/blockquote'
+
 
 class ChiselTest < Minitest::Test
 
@@ -32,65 +36,5 @@ class ChiselTest < Minitest::Test
     result = c.strong(input)
     assert_equal "<strong>Words are strong</strong>", result
   end
-
-
-  def test_what_if_h1
-    input = "#This is H1"
-    c = Chisel.new
-    result = c.header_parser(input)
-    assert_equal "<h1>This is H1</h1>", result
-  end
-
-  def test_h2
-    input = "##pizza"
-    c = Chisel.new
-    result = c.header_parser(input)
-    assert_equal "<h2>pizza</h2>", result
-  end
-
-  def test_can_work_for_any_header
-    input = "###Catdad"
-    c = Chisel.new
-    result = c.header_parser(input)
-    assert_equal "<h3>Catdad</h3>", result
-  end
-
-  def test_for_blockquote
-    input = ">Here is a blockquote"
-    c = Chisel.new
-    result = c.blockquote(input)
-    assert_equal "<blockquote><p>Here is a blockquote</p></blockquote>", result
-  end
-
-  def test_empty_string_retuns_empty_string
-   input = ""
-   c = Chisel.new
-   result = c.unordered_list(input)
-   assert_equal "" , result
- end
-
-
-  def test_for_unordered_list_with_one_thing
-
-    input = "*Sushi"
-    c = Chisel.new
-    result = c.unordered_list(input)
-    assert_equal "<ul><li>Sushi</li></ul>", result
-  end
-
-  def test_for_ordered_list_with_one_thing
-    input = "*Sushi"
-    c = Chisel.new
-    result = c.ordered_list(input)
-    assert_equal "<ol>\n<li>Sushi</li>\n</ol>", result
-  end
-
-  def test_for_unordered_list_with_two_things
-    input = "*Sushi*Mexican"
-    c = Chisel.new
-    result = c.unordered_list(input)
-    assert_equal "<ul><li>Sushi</li><li>Mexican</li></ul>", result
-  end
-
 
 end
