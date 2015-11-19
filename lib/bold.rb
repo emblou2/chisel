@@ -1,5 +1,4 @@
-class Bold
-
+class Bolder
   def italics(input)
     something = input[1..-2]
 
