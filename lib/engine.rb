@@ -7,7 +7,7 @@ class Converter
     @chunked_message = chunked_message
   end
 
-  ##{##h1 "this is the hea}
+  ## ['##hi this is a header', 'this is a paragraph', "*this is a list"]
 
   def convert_message(message_array) #I can call this only on a converted object...it's like a converter object
     #I can call any methed in converter class
