@@ -1,6 +1,6 @@
 class List
   def unordered_list(input)#maybe (index, input)
-
+##After meeting Justin...do this part later.
         #maybe split the input subtract 1 for position
         #like 1st position is zero, 2nd is one, etc...
         #need to know how many are in the list...map? enum?
